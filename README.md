@@ -120,8 +120,10 @@ map $http_user_agent $browser {
 
 server {
     listen 80;
+    charset 'utf-8';
     server_name www.fish2018.us.kg;
-    
+    root /home/fish2018;
+
     # 允许特定的文件正常访问
     location ~* ^/(README\.txt|z/readme\.txt|z/readme-tg\.txt|p/README\.txt)$ {
         # 使用 try_files 来确保文件存在并提供访问
