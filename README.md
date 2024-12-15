@@ -86,3 +86,30 @@ tgsearch多平台独立运行文件，使用./tgsearch
 1.优化tgsearch域名解析。
 2.优化tgsearch，当使用-1或-2,-s参数登录时，忽略原有session。便于生成新session。v1session容易失效，建议用-1方式多获取几个，每个设备单独使用。
 ```
+
+## sync-pg
+
+### 功能：
+- 监控TG频道，同步更新pg本地包并推送到github，生成README.md
+- 监控TG频道，同步更新tgsearch并推送到github，生成README.md
+- 支持本地解压zip自动处理jsm.json(设置线路、增删、排序、直播、壁纸、解析、代理规则等)，用于提供在线接口
+- [支持tdl加速下载](https://docs.iyear.me/tdl/)，需要先执行`tdl login -T code`获取配置信息
+
+#### 信息获取
+
+[github.com中设置token](https://github.com/settings/tokens)  
+
+[api_id/api_hash申请](https://my.telegram.org/ )   
+
+github上公开的api_id/api_hash
+```
+api_id = 2934000
+api_hash = "7407f1e353d48363c48df4c8b3904acb"
+
+api_id = '27335138'
+pi_hash = '2459555ba95421148c682e2dc3031bb6'
+
+api_id = 6627460
+api_hash = '27a53a0965e486a2bc1b1fcde473b1c4'
+```
+
