@@ -113,3 +113,41 @@ api_id = 6627460
 api_hash = '27a53a0965e486a2bc1b1fcde473b1c4'
 ```
 
+nginx配置参考  
+```
+map $http_user_agent $browser {
+    default 0;
+    ~*(Chrome|Firefox|Safari|Opera|MSIE|Trident|Edge) 1;
+}
+
+server {
+    listen 80;
+    server_name www.fish2018.us.kg;
+    
+    # 允许特定的文件正常访问
+    location ~* ^/(README\.txt|z/readme\.txt|z/readme-tg\.txt|p/README\.txt)$ {
+        # 使用 try_files 来确保文件存在并提供访问
+        try_files $uri =404;
+    }
+
+    # 匹配带有特定查询参数的请求
+    location ~* ^/p/jsm.json$ {
+        if ($browser = 1) {
+            return 302 https://github.com/fish2018/;
+        }
+        if ( $query_string ~* ^(.*)pwd=18x$ ) {
+            add_header Content-Type "application/json; charset=utf-8";
+            rewrite ^ /p/jsm.json-18x break;
+        }
+    }
+
+    location / {
+        if ($browser = 1) {
+            return 302 https://github.com/fish2018/;
+        }
+        # 如果当前请求是浏览器并且请求的 URI 不是 README.md 或 README.txt
+        root /home/fish2018;
+        index index.html;
+    }
+}
+```
