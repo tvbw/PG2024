@@ -4,9 +4,7 @@
 选择主页可以查看当前PG包版本  
 在线接口已经默认集成了tgsearch的在线服务器，无需任何tg配置  
 使用自己的本地包可以填写tgsearch服务器地址：  
-http://tg.fish2018.us.kg (未开启视频下载，流量上限1T)  
-http://hl.cloudns.be:10199  (@阿灵 分享)  
-http://45.207.209.177:10199  (@海王 分享)  
+http://tg.fish2018.us.kg (未开启视频下载)  
 http://tg.uu8.pro  (@DH 分享)  
 
 在线获取TG session，扫码登录支持两步验证:  
